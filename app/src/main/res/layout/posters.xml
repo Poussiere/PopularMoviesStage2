@@ -1,0 +1,24 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="1dp"
+    android:elevation="@dimen/cardview_default_elevation">
+
+    <ProgressBar
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:id="@+id/progress_bar_cardview"
+        android:layout_gravity="center"
+        android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/poster_view"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="fitXY"
+            />
+
+
+    </FrameLayout>
