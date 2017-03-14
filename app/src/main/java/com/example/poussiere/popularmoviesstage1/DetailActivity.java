@@ -70,13 +70,6 @@ public class DetailActivity extends AppCompatActivity implements MoviesTrailersA
     private boolean isFavorite;
 
 
-    public static final String[] PROJECTION = {
-            FavoriteDatabaseContract.TMDB_ID,
-            FavoriteDatabaseContract.ORIGINAL_TITLE,
-            FavoriteDatabaseContract.OVERVIEW
-
-    };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
