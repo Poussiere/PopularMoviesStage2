@@ -63,7 +63,7 @@ public class MoviesReviewsAdapter extends RecyclerView.Adapter< MoviesReviewsAda
     }
 
 
-    // Return the size of the posters links array
+    // Return the size of the reviews links array
     @Override
     public int getItemCount() {
         if (reviewsList==null) return 0;
@@ -71,7 +71,7 @@ public class MoviesReviewsAdapter extends RecyclerView.Adapter< MoviesReviewsAda
     }
 
 
-    //Method to pass the array with the links of movies posters images paths to the adapter when user switch between sort by popularity and sort by top rated
+    //Method to pass the array with the links of movies reviews to the adapter when user switch between sort by popularity and sort by top rated
     public void setReviewsList (ArrayList<ReviewObject>list)
 
     {
