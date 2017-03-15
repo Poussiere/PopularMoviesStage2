@@ -47,7 +47,9 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
     public final static String JSON_STRING="json";
 
     private int sortChoice = SORT_BY_POPULARITY ;// By default movie posters are sort by popularity
-
+    private int tempSortChoice=SORT_BY_POPULARITY ; // A int to remember what was the sort choice before item in spinner was clicked if user
+    //clicks on favorits and when database is empty
+    
     private RecyclerView postersRecyclerView;
     private MoviesPostersAdapter moviesPostersAdapter;
 
@@ -72,8 +74,8 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
     private String releaseDate;
     private String  overview;
     private float noteAverage;
-    private Cursor favoritesCursor;
-    private int tempSortChoice; // A int to remember what was the sort choice before item in spinner was clicked
+    private Cursor favoritesCursor; // Cursor who loads the results of the favorit movies database request
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        tempSortChoice=1;
+    
 
         // Make title white
        toolbar.setTitleTextColor(Color.WHITE);
@@ -104,18 +106,18 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sortChoice=position;
 
-                if (sortChoice==2)
+                if (sortChoice==SORT_BY_FAVORITES)
                 {
                     loadFavoritesMoviesData();
                 }
 
-                else if (sortChoice==0) {
-                    tempSortChoice=0;
+                else if (sortChoice==SORT_BY_POPULARITY) {
+                    tempSortChoice=SORT_BY_POPULARITY;
                     loadMoviesData();
                 }
 
-                else if (sortChoice==1)
-                {tempSortChoice=1;
+                else if (sortChoice==SORT_BY_TOP_RATED)
+                {tempSortChoice=SORT_BY_TOP_RATED;
                     loadMoviesData();
 
                 }
@@ -130,23 +132,19 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
 
         //Configure recycler view in GrilLayout
         postersRecyclerView=(RecyclerView)findViewById(R.id.posters_recyclerview);
-
-
         postersRecyclerView.setHasFixedSize(true);
         GridLayoutManager  gridLayoutManager = new GridLayoutManager(MainActivity.this, calculateNoOfColumns(getBaseContext())); // 2 = number of items on each row
         postersRecyclerView.setLayoutManager(gridLayoutManager);
-
         moviesPostersAdapter=new MoviesPostersAdapter(this);
         postersRecyclerView.setAdapter(moviesPostersAdapter);
 
-        //getSupportLoaderManager().initLoader(CURSOR_LOADER_ID, null, cursorLoaderCallback);
-
+        // By default, the Asyncloader with movies sorted by popularity is initialized
         getSupportLoaderManager().initLoader(ASYNC_LOADER_ID, null, this);
 
 
     }
 
-
+    //Method that initialize or resume the Asyncloader that loads datas for popular and top rated requests
     private void loadMoviesData()
     {
 
@@ -161,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
 
     }
 
+    //Method that initializes or resume the Cursor loader that loads datas for favorits requests
     private void loadFavoritesMoviesData()
     {
 
@@ -253,10 +252,7 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
 
         @Override
         public void onLoaderReset(Loader<String> loader) {
-        /*
-         * We aren't using this method in our example application, but we are required to Override
-         * it to implement the LoaderCallbacks<String> interface
-         */
+      
         }
 
 
@@ -322,7 +318,9 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
     public void whatMovieIndex(int index) {
         Intent i = new Intent (MainActivity.this, DetailActivity.class);
 
-        if(sortChoice==2)
+        
+        
+        if(sortChoice==SORT_BY_FAVORITES)
         {
             favoritesCursor.moveToPosition(index);
             movieId=favoritesCursor.getInt(1);
@@ -357,6 +355,7 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
         i.putExtra(RELEASE_DATE, releaseDate);
         i.putExtra(OVERVIEW, overview);
         i.putExtra(NOTE_AVERAGE, noteAverage);
+        
         startActivity(i);
 
 
