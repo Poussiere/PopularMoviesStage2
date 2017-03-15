@@ -65,11 +65,14 @@ public class DetailActivity extends AppCompatActivity implements MoviesTrailersA
     private MoviesTrailersAdapter trailersAdapter;
 
     //we'll check in the onCreate wether the movie is already in the favorite database or not
+    // We request the database with a Cursor Loader
     private static final int CURSOR_LOADER_CHECK_FAVORITE_ID = 3;
+    private boolean isFavorite;            
+                
+    // An id fot the asyncLoader that downloads trailers informations (name and url)
     private static final int TRAILER_LOADER_ID = 4;
-    private boolean isFavorite;
-
-
+                
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,14 +80,13 @@ public class DetailActivity extends AppCompatActivity implements MoviesTrailersA
         setContentView(R.layout.activity_detail);
 
         //Toolbar
-       toolbar = (Toolbar) findViewById(R.id.toolbar_detail);
-       setSupportActionBar(toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_detail);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.detail_activity_name);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
-
-
+            
         poster = (ImageView) findViewById(R.id.iv_detailPoster);
         tvTitle=(TextView) findViewById(R.id.tv_title);
         tvReleaseDate = (TextView) findViewById(R.id.tv_release_date);
@@ -101,9 +103,9 @@ public class DetailActivity extends AppCompatActivity implements MoviesTrailersA
         trailersAdapter=new MoviesTrailersAdapter(this);
         trailersRecyclerView.setAdapter(trailersAdapter);
 
+            
+        // We retrieve infos about selected movies that were passed in the intent
         Intent i = getIntent();
-
-
         movieId=i.getIntExtra(MOVIE_ID, 0);
         originalTitle = i.getStringExtra(MainActivity.ORIGINAL_TITLE);
         posterFullUrl = i.getStringExtra(MainActivity.POSTER_FULL_URL);
@@ -125,6 +127,8 @@ public class DetailActivity extends AppCompatActivity implements MoviesTrailersA
         //The cursor loader is initialized with the id of the selected movie to check if the movie is in the favorite database
         //It will check wether the movie is already in favorites or not and update the image button of the star
         getSupportLoaderManager().initLoader(CURSOR_LOADER_CHECK_FAVORITE_ID, bundle, cursorLoaderCallback);
+            
+            
         getSupportLoaderManager().initLoader(TRAILER_LOADER_ID, null, this);
 
 
@@ -325,6 +329,9 @@ protected void onResume()
 
     }
 
+                
+                
+    //This method is triggered when a trailer play Button is clicked           
     @Override
     public void whatTrailerIndex(int index) {
         TrailerObject trailerObject = mList.get(index);
