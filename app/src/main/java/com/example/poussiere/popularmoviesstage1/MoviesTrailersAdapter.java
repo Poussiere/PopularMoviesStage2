@@ -61,7 +61,7 @@ public class MoviesTrailersAdapter extends RecyclerView.Adapter< MoviesTrailersA
     }
 
 
-    // Return the size of the posters links array
+    // Return the size of the trailer objects array
     @Override
     public int getItemCount() {
         if (trailersList==null) return 0;
@@ -69,7 +69,7 @@ public class MoviesTrailersAdapter extends RecyclerView.Adapter< MoviesTrailersA
     }
 
 
-    //Method to pass the array with the links of movies posters images paths to the adapter when user switch between sort by popularity and sort by top rated
+    //Method to pass the array with the links of trailerobjects to the adapter when user switch between sort by popularity and sort by top rated
     public void setTrailersList (ArrayList<TrailerObject>list)
 
     {
