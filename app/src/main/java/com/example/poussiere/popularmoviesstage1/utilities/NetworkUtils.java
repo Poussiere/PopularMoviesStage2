@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class NetworkUtils {
 
     //API key is private. Please ask for your own API key to TheMovieDB
-    private static final String apiKey="ac25d2d29180abf9b84a87eba3ad5316";
+    private static final String apiKey="Insert your key here";
 
     private static final String BASE_URL_REVIEWS_AND_TRAILER_REQUESTS="https://api.themoviedb.org/3/movie";
     private static final String BASE_URL_POPULAR_REQUEST="https://api.themoviedb.org/3/movie/popular";
