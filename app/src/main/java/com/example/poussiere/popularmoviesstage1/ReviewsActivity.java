@@ -25,6 +25,8 @@ import static com.example.poussiere.popularmoviesstage1.MainActivity.MOVIE_ID;
 
 public class ReviewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
+    
+    //Reviews are juste loaded in a textview (+ a textview for the author name) via an ayncloader
     private static final int REVIEWS_LOADER_ID = 78;
     private int movieId;
     private ArrayList<ReviewObject> rList = new ArrayList<ReviewObject>();
