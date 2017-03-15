@@ -369,8 +369,8 @@ public class MainActivity extends AppCompatActivity implements MoviesPostersAdap
         float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
        
          int noOfColumns;
-        // If we are on tablet, the posters we'll appeat bigger
-        if (dpWitdth>=600)
+        // If we are on tablet, the posters we'll appeaR bigger
+        if (dpWidth>=600)
         { noOfColumns = (int) (dpWidth / 375);}
       
          else 
