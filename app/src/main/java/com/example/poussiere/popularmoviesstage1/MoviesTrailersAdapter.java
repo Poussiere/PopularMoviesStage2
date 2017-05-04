@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import com.example.poussiere.popularmoviesstage1.utilities.TrailerObject;
+import com.example.poussiere.popularmoviesstage1.Utilities.TrailerObject;
 import java.util.ArrayList;
 
 /**

@@ -1,4 +1,4 @@
-package com.example.poussiere.popularmoviesstage1.utilities;
+package com.example.poussiere.popularmoviesstage1.Utilities;
 
 import android.net.Uri;
 import java.io.IOException;

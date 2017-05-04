@@ -26,9 +26,8 @@ import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.example.poussiere.popularmoviesstage1.Data.FavoriteContentProvider;
-import com.example.poussiere.popularmoviesstage1.Data.FavoriteDatabaseContract;
-import com.example.poussiere.popularmoviesstage1.utilities.MoviesDbJsonUtils;
-import com.example.poussiere.popularmoviesstage1.utilities.NetworkUtils;
+import com.example.poussiere.popularmoviesstage1.Utilities.MoviesDbJsonUtils;
+import com.example.poussiere.popularmoviesstage1.Utilities.NetworkUtils;
 import org.json.JSONException;
 
 import java.net.URL;

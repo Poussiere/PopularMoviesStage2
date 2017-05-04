@@ -1,4 +1,4 @@
-package com.example.poussiere.popularmoviesstage1.utilities;
+package com.example.poussiere.popularmoviesstage1.Utilities;
 
 /**
  * Created by poussiere on 12/03/17.

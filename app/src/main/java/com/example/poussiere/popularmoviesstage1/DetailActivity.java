@@ -1,8 +1,5 @@
 package com.example.poussiere.popularmoviesstage1;
 
-import android.content.ActivityNotFoundException;
-import android.content.ContentProviderOperation;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -26,9 +23,9 @@ import android.widget.TextView;
 
 import com.example.poussiere.popularmoviesstage1.Data.FavoriteContentProvider;
 import com.example.poussiere.popularmoviesstage1.Data.FavoriteDatabaseContract;
-import com.example.poussiere.popularmoviesstage1.utilities.MoviesDbJsonUtils;
-import com.example.poussiere.popularmoviesstage1.utilities.NetworkUtils;
-import com.example.poussiere.popularmoviesstage1.utilities.TrailerObject;
+import com.example.poussiere.popularmoviesstage1.Utilities.MoviesDbJsonUtils;
+import com.example.poussiere.popularmoviesstage1.Utilities.NetworkUtils;
+import com.example.poussiere.popularmoviesstage1.Utilities.TrailerObject;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;

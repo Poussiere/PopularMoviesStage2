@@ -9,12 +9,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 
-import com.example.poussiere.popularmoviesstage1.utilities.MoviesDbJsonUtils;
-import com.example.poussiere.popularmoviesstage1.utilities.NetworkUtils;
-import com.example.poussiere.popularmoviesstage1.utilities.ReviewObject;
+import com.example.poussiere.popularmoviesstage1.Utilities.MoviesDbJsonUtils;
+import com.example.poussiere.popularmoviesstage1.Utilities.NetworkUtils;
+import com.example.poussiere.popularmoviesstage1.Utilities.ReviewObject;
 
 import org.json.JSONException;
 

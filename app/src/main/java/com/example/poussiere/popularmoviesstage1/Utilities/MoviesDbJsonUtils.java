@@ -1,4 +1,4 @@
-package com.example.poussiere.popularmoviesstage1.utilities;
+package com.example.poussiere.popularmoviesstage1.Utilities;
 
 import org.json.JSONArray;
 import org.json.JSONException;

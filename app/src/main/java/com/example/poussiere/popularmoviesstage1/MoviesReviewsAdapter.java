@@ -5,11 +5,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.poussiere.popularmoviesstage1.utilities.ReviewObject;
-import com.example.poussiere.popularmoviesstage1.utilities.TrailerObject;
+import com.example.poussiere.popularmoviesstage1.Utilities.ReviewObject;
 
 import java.util.ArrayList;
 

@@ -3,6 +3,7 @@
     <string name="detail_activity_name">Details</string>
     <string name="reviews_activity_name">Reviews</string>
     <string name="empty_bdd_alert">You do not have any favorit movie for the moment</string>
+    <string name="widget_label">Most popular movie of the day</string>
 
 
     <string-array name="sort_by">
