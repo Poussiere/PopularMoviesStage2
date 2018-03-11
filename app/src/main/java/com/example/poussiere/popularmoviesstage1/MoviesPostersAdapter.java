@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import com.squareup.picasso.Picasso;
 
-public class MoviesPostersAdapter extends RecyclerView.Adapter< MoviesPostersAdapter.MoviesPostersViewHolder> {
+public class MoviesPostersAdapter  extends RecyclerView.Adapter< MoviesPostersAdapter.MoviesPostersViewHolder> {
 
     private String [] posterList;
     private final MoviesPostersAdapterOnClickHandler mClickHandler;
